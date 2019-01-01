@@ -1,0 +1,23 @@
+<div class="mt-5">
+  <div class="row" *ngIf="posts.length > 0; else noPosts">
+    <div class="col-lg-3 col-md-6 col-sm-12 mb-5" *ngFor="let post of posts">
+      <div class="card">
+        <img *ngIf="post.image" [src]="post.image" alt="Post Image" class="card-image-top img-thumbnail">
+        <div class="card-body">
+          <p class="card-text">{{post.title}}</p>
+        </div>
+        <div class="card-footer">
+          <a href="#" [routerLink]="'/admin/posts/edit/' + post.$key" class="btn btn-primary btn-sm">Edit</a>&nbsp; 
+          <a href="#" (click)="deletePost(post.$key, $event)" class="btn btn-danger btn-sm">Delete</a>
+          &nbsp; 
+          <a href="#" [routerLink]="'/post/' + post.$key" class="btn btn-info btn-sm">View</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ng-template #noPosts>
+    <div class="preloader-holder">
+      <div class="lds-roller preloader"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </div>
+  </ng-template>
+</div>

@@ -1,0 +1,18 @@
+<div class="card mb-5">
+  <img [src]="post.image" *ngIf="post.image" alt="Post Image" class="card-img-top">
+  <div class="card-body">
+    <h5 class="card-title">
+      <a href="#" style="text-decoration: none" [routerLink]="'/post/' + post.$key">{{post.title}}</a>
+    </h5>
+    <div class="card-text">
+      <p class="text-muted font-weight-lighter">
+        {{post.details}}
+      </p>
+    </div>
+  </div>
+  <div class="card-footer">
+    <small class="text-muted">
+      {{post.createdAt | date}}
+    </small>
+  </div>
+</div>

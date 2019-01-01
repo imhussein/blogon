@@ -1,0 +1,39 @@
+<div class="row mb-3">
+  <div class="col-sm-12">
+    <div class="card">
+      <h2 class="card-header text-center bg-dark text-white">
+        Total Posts : {{postsNumber}}
+      </h2>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-12">
+    <div class="holder" *ngIf="latestPosts.length; else noPosts">
+      <div class="card">
+        <h3 class="text-center card-header">
+          Latest Posts
+        </h3>
+        <div class="card-body">
+          <ul *ngFor="let post of latestPosts; let i = index" class="list-group">
+            <li class="list-group-item mb-2">
+              <a href="#" [routerLink]="'/post/' + post.$key" class="nounderline" style="color: #000; text-decoration: none">{{post.title}}</a>
+              <h4 class="display-2 badge badge-primary">
+                {{i}}
+              </h4>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <ng-template #noPosts>
+      <div class="col-md-6 mx-auto">
+        <div class="jumbotron text-center">
+          <h3>No Posts Found</h3>
+          <a href="/" routerLink="/admin/posts/add" class="btn btn-primary">Getting Started</a>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+</div>

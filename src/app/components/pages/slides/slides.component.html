@@ -1,0 +1,9 @@
+<div class="slide">
+  <div class="slide-bg" [ngStyle]="{'background-image': 'url(' + slide.image + ')' }"></div>
+  <div class="slide-content">
+    <h3 class="slide-heading">{{slide.title}}</h3>
+    <div>
+      <a href="#" [routerLink]="'/post/' + slide.$key" class="btn custom-btn">Read More...</a>
+    </div>
+  </div>
+</div>

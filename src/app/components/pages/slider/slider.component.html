@@ -1,0 +1,14 @@
+<div class="slider-wrapper">
+  <div *ngIf="slides.length > 0; else noSlides">
+    <div class="slider">
+        <div class="slides" *ngFor="let slide of slides">
+          <app-slides [slide]="slide"></app-slides>
+        </div>
+    </div>
+  </div>
+  <ng-template #noPosts>
+    <div class="preloader-holder">
+      <div class="lds-roller preloader"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </div>
+  </ng-template>
+</div>

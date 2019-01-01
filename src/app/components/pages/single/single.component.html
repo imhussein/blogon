@@ -1,0 +1,20 @@
+<div class="mt-5">
+  <div class="row text-center">
+    <div class="col-sm-12">
+      <h2 class="text-center">
+        <a href="#" routerLink="'/post/'+ id" style="text-decoration: none">
+          {{postTitle}}
+        </a>
+      </h2>
+      <div class="mt-2 mb-2">
+        <p class="badge badge-secondary" style="float: none;">
+          {{postDate | date}}
+        </p>
+      </div>
+      <img [src]="postImage" *ngIf="postImage" alt="Post Image" class="img-thumbnail" width="70%">
+      <p class="lead mt-2 text-muted p-5">
+        {{postDetails}}
+      </p>
+    </div>
+  </div>
+</div>

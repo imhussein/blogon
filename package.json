@@ -7,9 +7,10 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "deploy": "gh-pages -d dist"
   },
-  "private": true,
+  "private": false,
   "homepage": "https://mh10445.github.io/blogon",
   "dependencies": {
     "@angular/animations": "~7.1.0",
@@ -23,7 +24,9 @@
     "@angular/router": "~7.1.0",
     "angular2-flash-messages": "^3.0.1",
     "core-js": "^2.5.4",
+    "express": "^4.16.4",
     "firebase": "^5.7.1",
+    "gh-pages": "^2.0.1",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
     "zone.js": "~0.8.26"
